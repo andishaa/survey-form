@@ -1,3 +1,8 @@
+:root {
+    --dark-grey-color: rgb(92, 92, 92);
+    --white-color: #fff;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +13,7 @@ html {
     height: 100vh;
 }
 
+/* a workaround for making the background image fixed on mobile devices */
 body::before {
     content: '';
     position: fixed;
@@ -16,6 +22,18 @@ body::before {
     height: 100%;
     width: 100%;
     z-index: -1;
+    background: var(--dark-grey-color);
+    background-image: linear-gradient( 115deg, rgba(43, 2, 119, 0.6), rgba(121, 32, 148, 0.5)), url(./background-img.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+body {
+    font-size: 1rem;
+    color: var(--white-color);
+    font-weight: 400;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.4;
 }
 
 #container {
@@ -39,4 +57,14 @@ body::before {
 
 .text-center {
     text-align: center;
+}
+
+.header {
+    margin-bottom: 1.5625rem;
+}
+
+#survey-form {
+    background-color: rgba(173, 173, 173, 0.5);
+    border-radius: 0.25rem;
+    padding: 2.5rem;
 }
